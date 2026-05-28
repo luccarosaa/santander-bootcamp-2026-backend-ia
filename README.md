@@ -21,17 +21,17 @@ Aprenda do zero como construir sistemas back-end robustos e seguros com **Java**
 
 A organização deste repositório segue o padrão de estudos do bootcamp, com exercícios numerados e projetos práticos.
 
-📦 santander-bootcamp-2026-backend-ia/
-│
-├── 📁 exercicios/
-│ ├── exercicio-1.java
-│
-├── 📁 projetos/
-│ ├── projeto-1.java
-│
-├── 📁 images/
-│
-└── README.md
+📦 santander-bootcamp-2026-backend-ia/<\br>
+│<\br>
+├── 📁 exercicios/<\br>
+│ ├── exercicio-1.java<\br>
+│<\br>
+├── 📁 projetos/<\br>
+│ ├── projeto-1.java<\br>
+│<\br>
+├── 📁 images/<\br>
+│<\br>
+└── README.md<\br>
 
 ---
 
