@@ -87,7 +87,7 @@ A organização deste repositório segue o padrão de estudos do bootcamp, com e
 
 ```bash
 # Clonar o repositório
-git clone https://github.com/seu-usuario/santander-bootcamp-2026-backend-ia.git
+git clone https://github.com/luccarosaa/santander-bootcamp-2026-backend-ia.git
 
 # Exercícios simples de fundamentos
 cd exercicios
