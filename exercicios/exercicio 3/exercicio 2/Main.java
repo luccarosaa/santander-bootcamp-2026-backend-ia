@@ -26,7 +26,7 @@ Siga as seguintes regras na implementação
     * O carro só pode virar para esquerda/direita se sua velocidade for de no mínimi 1km e no máximo 40km;
  */
 
-public class Main {
+public class Carro {
 
     public static void main(String[] args) {
 

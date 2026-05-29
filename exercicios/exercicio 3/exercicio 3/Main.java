@@ -20,7 +20,7 @@ Siga as seguintes regras para implementação
     O abastecimento de água e shampoo deve permitir 2 litros por vez que for acionado;
  */
 
-public class Main {
+public class PetShop {
 
     public static void main(String[] args) {
 
