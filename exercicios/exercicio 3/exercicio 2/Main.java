@@ -1,5 +1,4 @@
-/*
-Escreva um código onde controlamos as funções de um carro, ele deve ter as seguintes funções:
+/* Escreva um código onde controlamos as funções de um carro, ele deve ter as seguintes funções:
     * Ligar o carro;
     * Desligar o carro;
     * Acelerar;
@@ -26,9 +25,45 @@ Siga as seguintes regras na implementação
     * O carro só pode virar para esquerda/direita se sua velocidade for de no mínimi 1km e no máximo 40km;
  */
 
-public class Carro {
+import java.util.Scanner;
+
+public class Main {
+
+    final static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+        System.out.println("Ligue o carro para iniciar\n");
+        var option = -1;
 
+        final Carro carro = new Carro();
+
+        do {
+            System.out.println("\n=== Escolha uma das opções ===");
+            System.out.println("1 - Ligar o carro");
+            System.out.println("2 - Desligar o carro");
+            System.out.println("3 - Acelerar");
+            System.out.println("4 - Diminuir velocidade");
+            System.out.println("5 - Virar direita");
+            System.out.println("6 - Virar esquerda");
+            System.out.println("7 - Verificar velocidade");
+            System.out.println("8 - Trocar a velocidade");
+            System.out.println("0 - Sair");
+            System.out.println("==============================\n");
+            option = scanner.nextInt();
+
+            switch (option){
+                case 1 -> carro.ligarCarro();
+                case 2 -> carro.desligarCarro();
+                case 3 -> carro.acelerar();
+                case 4 -> carro.desacelerar();
+                case 5 -> carro.virarDireita();
+                case 6 -> carro.virarEsquerda();
+                case 7 -> carro.verificarVelocidade();
+                case 8 -> carro.trocarMarcha();
+                default -> System.out.println("Opção inválida");
+                case 0 -> System.exit(0);
+            }
+
+        } while (true);
     }
 }

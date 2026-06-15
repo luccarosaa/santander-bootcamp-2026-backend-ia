@@ -17,9 +17,41 @@ Siga as seguintes regras para implementar:
     valor usado do cheque especial.
  */
 
+import java.util.Scanner;
+
 public class Main {
+    final static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println("Olá");
+        System.out.println("Informe o depósito inicial:");
+        var valorInicial = scanner.nextFloat();
+
+        final ContaBancaria contaBancaria = new ContaBancaria(valorInicial);
+
+        var option = -1;
+
+        do {
+            System.out.println("=== Escolha uma das opções ===");
+            System.out.println("1 - Consultar saldo");
+            System.out.println("2 - Consultar cheque especial");
+            System.out.println("3 - Depositar dinheiro");
+            System.out.println("4 - Sacar dinheiro");
+            System.out.println("5 - Pagar boleto");
+            System.out.println("6 - Verificar se aconta está usando cheque especial");
+            System.out.println("0 - Sair");
+            option = scanner.nextInt();
+
+            switch (option){
+                case 1 -> contaBancaria.consultarSaldo();
+                case 2 -> contaBancaria.consultarChequeEspecial();
+                case 3 -> contaBancaria.depositarDinheiro();
+                case 4 -> contaBancaria.sacarDinheiro();
+                case 5 -> contaBancaria.pagarBoleto();
+                case 6 -> contaBancaria.verificarChequeEspecial();
+                default -> System.out.println("Opção inválida");
+                case 0 -> System.exit(0);
+            }
+
+        } while (true);
     }
 }
