@@ -43,8 +43,80 @@ public class Main{
         System.out.println("3 - " + ingresso3.getNomeFilme());
         System.out.println("4 - " + ingresso4.getNomeFilme());
         System.out.println("5 - " + ingresso5.getNomeFilme());
+        System.out.println("0 - Sair");
         System.out.println("============================");
 
-        var filme = scanner.nextInt();
+        var option = scanner.nextInt();
+
+        Ingresso ingressoEscolhido;
+
+        switch (option) {
+            case 1 -> ingressoEscolhido = ingresso1;
+            case 2 -> ingressoEscolhido = ingresso2;
+            case 3 -> ingressoEscolhido = ingresso3;
+            case 4 -> ingressoEscolhido = ingresso4;
+            case 5 -> ingressoEscolhido = ingresso5;
+            case 0 -> {
+                System.out.println("Saindo...");
+                return;
+            }
+            default -> {
+                System.out.println("Opção inválida");
+                return;
+            }
+        }
+
+        System.out.println("=== Escolha o tipo de ingresso ===");
+        System.out.println("1 - Inteira");
+        System.out.println("2 - Meia entrada");
+        System.out.println("3 - Família");
+        System.out.println("0 - Desistir");
+        System.out.println("==================================");
+
+        var tipoIngresso = scanner.nextInt();
+
+        Ingresso ingressoFinal;
+
+        switch (tipoIngresso) {
+            case 1 -> ingressoFinal = ingressoEscolhido;
+            case 2 -> {
+                MeiaEntrada meia = new MeiaEntrada();
+
+                meia.setNomeFilme(ingressoEscolhido.getNomeFilme());
+                meia.setTipoFilme(ingressoEscolhido.getTipoFilme());
+                meia.setValor(ingressoEscolhido.getValor());
+
+                ingressoFinal = meia;
+            }
+            case 3 -> {
+                IngressoFamilia familia = new IngressoFamilia();
+
+                familia.setNomeFilme(ingressoEscolhido.getNomeFilme());
+                familia.setTipoFilme(ingressoEscolhido.getTipoFilme());
+                familia.setValor(ingressoEscolhido.getValor());
+
+                System.out.println("Informe a quantidade de pessoas:");
+                int quantidade = scanner.nextInt();
+
+                familia.setNPessoas(quantidade);
+
+                ingressoFinal = familia;
+            }
+            case 0 -> {
+                System.out.println("Saindo...");
+                return;
+            }
+            default -> {
+                System.out.println("Opção inválida");
+                return;
+            }
+        }
+
+        System.out.println("Filme: " + ingressoFinal.getNomeFilme());
+        System.out.println("Tipo: " + ingressoFinal.getTipoFilme());
+        System.out.println("Valor original: R$ " + ingressoFinal.getValor());
+        if (ingressoFinal instanceof MeiaEntrada || ingressoFinal instanceof IngressoFamilia){
+            System.out.println("Valor final: R$ " + ingressoFinal.getValorReal());
+        }
     }
 }
