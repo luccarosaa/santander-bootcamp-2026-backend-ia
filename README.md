@@ -1,99 +1,82 @@
-# 🚀 Santander Bootcamp 2026 - Java Back-end com IA
+# Santander Bootcamp 2026 - Back-end Java com IA
 
-[![Java](https://img.shields.io/badge/Java-21-ED8B00?logo=openjdk)](https://openjdk.org/projects/jdk/21/)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.x-6DB33F?logo=springboot)](https://spring.io/projects/spring-boot)
-[![Spring Security](https://img.shields.io/badge/Spring%20Security-6.x-6DB33F?logo=springsecurity)](https://spring.io/projects/spring-security)
-[![Gemini](https://img.shields.io/badge/Gemini-API-4285F4?logo=googlegemini)](https://ai.google.dev/gemini-api)
-[![OpenAI Whisper](https://img.shields.io/badge/Whisper-OpenAI-412991?logo=openai)](https://openai.com/whisper/)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+Repositório de estudos e projetos do Santander Bootcamp 2026, com foco em
+Java, back-end, Spring Boot, persistência de dados e fundamentos para uso de IA
+em aplicações.
 
-## 📌 Sobre o Bootcamp
+## Conteúdo
 
-Aprenda do zero como construir sistemas back-end robustos e seguros com **Java**, uma das linguagens mais utilizadas por grandes bancos e empresas no mundo há mais de duas décadas, e dê o próximo passo integrando **Inteligência Artificial** ao desenvolvimento.
+| Pasta | Descrição |
+| --- | --- |
+| `exercicios/` | Exercícios básicos de Java organizados por tema |
+| `jdbc-sample/` | Exemplo de acesso a banco com JDBC |
+| `warehouse/` | Projeto Java com Gradle |
+| `annotation-processor/` | Estudo de annotation processors em Java |
+| `lab-design-patterns-java/` | Exemplos clássicos de Design Patterns em Java puro |
+| `lab-design-patterns-spring/` | Lab de Design Patterns com Spring Boot e integração ViaCEP |
+| `lab-design-patterns-desafio/` | API REST de controle financeiro pessoal com Spring Boot |
 
-**Domine:** fundamentos e sintaxe do Java 21 • APIs REST seguras com Spring Boot e Spring Security • Clean Architecture • integração com OpenFeign • IA generativa com Whisper (OpenAI) e Gemini (Google)
+## Projeto em destaque
 
-**Projeto final:** Assistente virtual inteligente por voz
+### `lab-design-patterns-desafio`
 
----
+API REST para controle financeiro pessoal. Permite cadastrar receitas e
+despesas, listar transações, buscar por id, atualizar, remover e consultar o
+saldo total.
 
-## 📂 Estrutura do Repositório
+Principais recursos:
 
-A organização deste repositório segue o padrão de estudos do bootcamp, com exercícios numerados e projetos práticos.
+- Java 21
+- Spring Boot
+- Spring Web
+- Spring Data JPA
+- H2 Database
+- Swagger/OpenAPI
+- Maven
 
-📦 santander-bootcamp-2026-backend-ia/</br>
-│</br>
-├── 📁 exercicios/</br>
-│ ├── exercicio-1.java</br>
-│</br>
-├── 📁 projetos/</br>
-│ ├── projeto-1.java</br>
-│</br>
-├── 📁 images/</br>
-│</br>
-└── README.md</br>
+Endpoints principais:
 
----
+| Método | Rota | Descrição |
+| --- | --- | --- |
+| `GET` | `/transacoes` | Lista todas as transações |
+| `GET` | `/transacoes/{id}` | Busca uma transação por id |
+| `GET` | `/transacoes/saldo` | Calcula o saldo total |
+| `POST` | `/transacoes` | Cria uma transação |
+| `PUT` | `/transacoes/{id}` | Atualiza uma transação |
+| `DELETE` | `/transacoes/{id}` | Remove uma transação |
 
-## 🎯 Conteúdos por Módulo
-
-### Fundamentos Java 21
-| # | Tópico | Descrição |
-|---|--------|------------|
-| 1 | Fundamentos | Sintaxe, variáveis, operadores, entrada/saída |
-| 2 | Estruturas de Controle | If/else, switch, loops (for, while, do-while) |
-| 3 | POO | Classes, objetos, encapsulamento, construtores |
-| 4 | Herança & Polimorfismo | Superclasses, sobrescrita, classes abstratas |
-| 5 | Interfaces & Lambdas | Interfaces funcionais, expressões lambda, method reference |
-| 6 | Collections & Streams | List, Set, Map, Stream API, Optionals |
-
-### Spring Framework & Arquitetura
-| # | Tópico | Descrição |
-|---|--------|------------|
-| 7 | Spring Boot | APIs REST, injeção de dependências, JPA/Hibernate |
-| 8 | Spring Security | Autenticação, autorização, JWT, BCrypt |
-| 9 | Clean Architecture | Separação em camadas, use cases, DTOs |
-| 10 | OpenFeign | Consumo declarativo de APIs externas |
-
-### Inteligência Artificial
-| # | Tópico | Descrição |
-|---|--------|------------|
-| 11 | IA com Whisper & Gemini | Transcrição de áudio, geração de respostas contextuais |
-
----
-
-## 🛠️ Tecnologias Utilizadas
-
-| Categoria | Tecnologias |
-|-----------|-------------|
-| **Linguagem** | Java 21 |
-| **Framework** | Spring Boot 3, Spring Data JPA, Spring Security |
-| **Integração** | OpenFeign, Apache HTTP Client |
-| **IA** | OpenAI Whisper API, Google Gemini API |
-| **Build** | Maven / Gradle |
-| **Banco de Dados** | H2 (dev), PostgreSQL (produção opcional) |
-| **Documentação** | OpenAPI 3 (Swagger) |
-| **Testes** | JUnit 5, Mockito |
-
----
-
-## 📝 Como Estudar por Este Repositório
-
-1. **Siga a ordem numérica** dos arquivos dentro da pasta `exercicios/`
-2. Após dominar os exercícios de um módulo, parta para o **projeto correspondente** na pasta `projetos/`
-3. As imagens em `images/` ajudam na visualização de arquitetura e fluxos
-
-### Comandos úteis para rodar os códigos
+## Como rodar o desafio
 
 ```bash
-# Clonar o repositório
-git clone https://github.com/luccarosaa/santander-bootcamp-2026-backend-ia.git
+cd lab-design-patterns-desafio
+./mvnw spring-boot:run
+```
 
-# Exercícios simples de fundamentos
-cd exercicios
-javac NomeDoArquivo.java
-java NomeDoArquivo
+Swagger:
 
-# Projetos Spring Boot
-cd projetos/1-api-tarefas
-./mvnw spring-boot:run   # ou ./gradlew bootRun
+```text
+http://localhost:8080/swagger-ui.html
+```
+
+Testes:
+
+```bash
+./mvnw test
+```
+
+## Tecnologias usadas
+
+- Java 21
+- Spring Boot
+- Spring Data JPA
+- Spring Web
+- Swagger/OpenAPI
+- H2 Database
+- Maven
+- Gradle
+- JUnit
+
+## Objetivo
+
+Registrar a evolução dos estudos do bootcamp por meio de exercícios pequenos,
+labs guiados e projetos práticos de back-end Java.
