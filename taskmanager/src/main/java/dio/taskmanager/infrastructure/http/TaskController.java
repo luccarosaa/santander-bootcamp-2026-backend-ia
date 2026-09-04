@@ -1,7 +1,6 @@
 package dio.taskmanager.infrastructure.http;
 
 import dio.taskmanager.application.*;
-import dio.taskmanager.application.input.UptadeTaskInput;
 import dio.taskmanager.domain.TaskId;
 import dio.taskmanager.infrastructure.http.request.CreateTaskRequest;
 import dio.taskmanager.infrastructure.http.request.UpdateTaskRequest;
@@ -36,6 +35,7 @@ public class TaskController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     TaskResponse create(@RequestBody @Valid CreateTaskRequest request){
         var input = request.toInput();
         var output = createTaskUseCase.execute(input);
