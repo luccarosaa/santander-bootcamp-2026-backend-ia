@@ -6,6 +6,7 @@ Projeto de estudo do Santander Bootcamp 2026 para um marketplace com persistenci
 
 O sistema sera dividido por necessidade de dados, usando a tecnologia mais simples para cada caso:
 
+- MySQL: controle e gerenciamento de usuários.
 - PostgreSQL: dados transacionais, pedidos, pagamentos e integridade referencial.
 - MongoDB: catalogos e eventos com estrutura variavel.
 - Redis: bloqueio temporario, cache e controle de concorrencia em fluxos de alta disputa.
